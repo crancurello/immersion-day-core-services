@@ -8,16 +8,18 @@ See the diagram below for a depiction of the complete architecture.
 
 ## Modules
 
-This workshop is broken up into multiple modules. For building out your architecture, you must complete the following modules in **US East (N. Virginia)** region in order before proceeding to the next:
+This workshop is broken up into multiple modules.
 
-2\. [Getting Started with AWS IAM]( "AWS IAM")
+For building out your architecture, you must complete the following modules in **US East (N. Virginia)** region in order before proceeding to the next:
 
-2\. [Getting Started with Amazon VPC]( "Amazon VPC")
+1\. [Getting Started with AWS IAM](tutorials/IAM.md "AWS IAM")
 
-3\. [Getting Started with Application Load Balancer]( "Application Load Balancer")
+2\. [Getting Started with Amazon VPC](tutorials/VPCFromScratch.md "Amazon VPC")
 
-4\. [Getting Started with Amazon S3]( "Amazon S3")
+3\. [Getting Started with Application Load Balancer](tutorials/ApplicationLoadBalancer.md "Application Load Balancer")
 
-6\. [Getting Started with Amazon RDS]( "Amazon RDS")
+4\. [Getting Started with Amazon S3](tutorials/S3.md "Amazon S3")
 
-6\. [Getting Started with AWS Auto Scaling]( "AWS Auto Scaling")
+5\. [Getting Started with Amazon RDS](tutorials/RDS.md "Amazon RDS")
+
+6\. [Getting Started with AWS Auto Scaling](tutorials/AutoScaling.md "AWS Auto Scaling")

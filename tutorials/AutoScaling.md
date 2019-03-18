@@ -19,7 +19,7 @@
 •	For **Name**, type `WebServers` for your launch configuration.
 •	For **IAM Role**, select `Our_Experiences_S3` to associate with the instances.
 •	(Optional) By default, basic monitoring is enabled for your Auto Scaling instances. To enable detailed monitoring for your Auto Scaling instances, select **Enable CloudWatch detailed monitoring**.
-•	Expand the section **Advanced Details**, copy the [content file](), from the script replace `<ENDPOINT>` with the RDS instance endpoint and `<BUCKET_NAME>` with your bucket name created earlier, paste it in **User data** as text.
+•	Expand the section **Advanced Details**, copy the [content file](../scripts/bootstrap-github.sh), from the script replace `<ENDPOINT>` with the RDS instance endpoint and `<BUCKET_NAME>` with your bucket name created earlier, paste it in **User data** as text.
 
 1.8\.	Choose **Next: Add Storage** and **Next: Configure Security Group**.
 
