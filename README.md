@@ -1,10 +1,12 @@
-# Immersion Day Core Services
+# Immersion Day Core Services with Auto Scaling
 
 Hello, this is a self-paced workshop designed to explore the AWS Core Services.
 
 In this workshop, you will build 2-tier application architecture with Auto Scaling that covers core services and best practices for Compute, Networking, Storage and Databases..
 
 See the diagram below for a depiction of the complete architecture.
+
+![Immersion Day Core Services with Auto Scaling](https://github.com/aurbac/codedeploy-codepipeline-with-laravel/raw/master/images/continuos-deployment-aws.png)
 
 ## Modules
 

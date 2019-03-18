@@ -159,6 +159,7 @@
 
 •	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences**
 
+Another rule:
 
 •	**Type:** `MYSQL/Aurora`
 

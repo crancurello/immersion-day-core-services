@@ -70,3 +70,12 @@
 
 ## 3. Accesing the URL web page
 
+After creating the Auto Scaling group wait about 5 minutes until the web instances come into service.
+
+3.1\.	Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+3.2\.	On the navigation pane, under **LOAD BALANCING**, choose **Load Balancers**.
+
+3.3\.	Select **our-experiences**, from the **Description** section copy the **DNS name**.
+
+3.4\.	Now test in your browser the web page by accessing with the DNS name.
