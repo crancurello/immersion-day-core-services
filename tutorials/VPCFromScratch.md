@@ -1,4 +1,4 @@
-# Getting Started with VPC
+# Getting Started with Amazon VPC
 
 ## 1. Create a VPC from scratch
 
@@ -49,49 +49,163 @@
 
 1.15\. Now you have a VPC network with public and private subnets.
 
-## 2. Create a bastion instance
+1.16\. In the navigation pane, choose **Your VPCs**.
 
-**Bastion Hosts**: Including bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet. After you set up your bastion hosts, you can access the other instances in your VPC through Secure Shell (SSH) connections on Linux. Bastion hosts are also configured with security groups to provide fine-grained ingress control.
+1.17\. Select the VPC **My VPC** from the list.
+
+1.18\. Review the information in the **Summary** tab. Make sure both settings for **DNS resolution** and **DNS hostnames** are enabled.
+            
+1.19\. To update these settings, choose **Actions** and either **Edit DNS Resolution** or **Edit DNS Hostnames**. In the dialog box that opens, check the **enable** option, and then choose **Save**.
+
+## 2. Create the Security Groupd for the Application Laod Balancer
+
+2.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
+
+2.2\. In the navigation pane, choose **Security Groups**.
+
+2.3\. Choose **Create Security Group**.
+
+2.4\. Enter a name of the security group `our-experiences-alb` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+
+2.5\. Select the security group **our-experiences-alb**.
+
+2.6\. On the **Inbound Rules** tab, choose **Edit rules**.
+
+2.7\. In the dialog, choose **Add Rule** and do the following:
+
+•	**Type:** `HTTP`
+•	**Protocol:** `TCP`
+•	**Port Range:** `80`
+•	**Source:** `Anywhere 0.0.0.0/0`
+
+2.8\. Choose **Save rules** and **Close**.
 
 
-### Create a new Key Pair
+## 3. Create the Security Groupd for the WebServers
 
-2.1\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+3.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
-2.2\. Click on **Key Pairs** in the NETWORK & SECURITY section near the bottom of the leftmost menu. This will display a page to manage your SSH key pairs. 
+3.2\. In the navigation pane, choose **Security Groups**.
 
-2.3\. To create a new SSH key pair, click the **Create Key Pair** button at the top of the browser window.
+3.3\. Choose **Create Security Group**.
 
-2.4\. In the resulting pop up window, type `[First Name]-[Last Name]-ImmersionDay` into the Key Pair Name: text box and click **Create**.
+3.4\. Enter a name of the security group `our-experiences` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
 
-2.5\. The page will download the file **[Your-Name]-ImmersionDay.pem** to the local drive.  Follow the browser instructions to save the file to the default download location.
+3.5\. Select the security group **our-experiences**.
 
-2.6\. Remember the full path to the file .pem file you just downloaded.
+3.6\. On the **Inbound Rules** tab, choose **Edit rules**.
+
+3.7\. In the dialog, choose **Add Rule** and do the following:
+
+•	**Type:** `HTTP`
+•	**Protocol:** `TCP`
+•	**Port Range:** `80`
+•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences-alb**
+
+3.8\. Choose **Save rules** and **Close**.
+
+## 4. Create the Security Groupd for the Bastion Instance
+
+4.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
+
+4.2\. In the navigation pane, choose **Security Groups**.
+
+4.3\. Choose **Create Security Group**.
+
+4.4\. Enter a name of the security group `bastion` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+
+4.5\. Select the security group **bastion**.
+
+4.6\. On the **Inbound Rules** tab, choose **Edit rules**.
+
+4.7\. In the dialog, choose **Add Rule** and do the following:
+
+•	**Type:** `SSH`
+•	**Protocol:** `TCP`
+•	**Port Range:** `22`
+•	**Source:** `Anywhere 0.0.0.0/0`
+
+4.8\. Choose **Save rules** and **Close**.
+
+## 5. Create the Security Groupd for database RDS Instance
+
+5.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
+
+5.2\. In the navigation pane, choose **Security Groups**.
+
+5.3\. Choose **Create Security Group**.
+
+5.4\. Enter a name of the security group `our-experiences-db` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+
+5.5\. Select the security group **our-experiences-db**.
+
+5.6\. On the **Inbound Rules** tab, choose **Edit rules**.
+
+5.7\. In the dialog, choose **Add Rule** and add the following rules:
+
+•	**Type:** `MYSQL/Aurora`
+•	**Protocol:** `TCP`
+•	**Port Range:** `3306`
+•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences**
+
+•	**Type:** `MYSQL/Aurora`
+•	**Protocol:** `TCP`
+•	**Port Range:** `3306`
+•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **bastion**
+
+5.8\. Choose **Save rules** and **Close**.
+
+### 6. Create a new Key Pair
+
+6.1\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+6.2\. Click on **Key Pairs** in the NETWORK & SECURITY section near the bottom of the leftmost menu. This will display a page to manage your SSH key pairs. 
+
+6.3\. To create a new SSH key pair, click the **Create Key Pair** button at the top of the browser window.
+
+6.4\. In the resulting pop up window, type `ImmersionDay` into the Key Pair Name: text box and click **Create**.
+
+6.5\. The page will download the file **ImmersionDay.pem** to the local drive.  Follow the browser instructions to save the file to the default download location.
+
+6.6\. Remember the full path to the file .pem file you just downloaded.
 
 **NOTE**: You will use the Key Pair you just created to manage your EC2 instances for the rest of the labs.
 
-### Create the instance
+### 7. Create the Bastion EC2 Instance
 
-2.7\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+**Bastion Hosts**: Including bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet. After you set up your bastion hosts, you can access the other instances in your VPC through Secure Shell (SSH) connections on Linux. Bastion hosts are also configured with security groups to provide fine-grained ingress control.
 
-2.8\. Click on **Launch Instance**.
+7.1\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
 
-2.9\. In the Quick Start section, select the **Ubuntu Server 16.04 LTS (HVM)** AMI and click **Select**.
+7.2\. Click on **Launch Instance**.
 
-2.10\. In the Choose Instance Type tab, select the **t2.micro** instance size and click **Next**.
+7.3\. In the Quick Start section, select the **Ubuntu Server 16.04 LTS (HVM)** AMI and click **Select**.
 
-2.11\. On the Configure Instance Details page, select your network **My VPC** created and the **Public Subnet 01**, for Auto-assign Public IP select **Enable**, and for IAM Role select **EC2_S3ReadOnly**. Click **Next**.
+7.4\. In the Choose Instance Type tab, select the **t2.micro** instance size and click **Next: Configure Instance Desatils**.
 
-2.12\. On this page you have the ability to modify or add storage and disk drives to the instance. For this lab, we will simply accept the storage defaults and click **Next**.
+7.5\. On the Configure Instance Details page, select your network **My VPC** created and the **Public Subnet 01**, for Auto-assign Public IP select **Enable**. 
 
-2.13\. In order to identify our instance with a friendly name add a tag to the instance, type a key of `Name` and the value of `Bastion`, click on **Next: Configure Security Group**.
+7.6\. Expand **Advanced Details** and copy and paste the following lines **As text**.
 
-2.14\. You will be prompted to create a new security group, which will be your firewall rules. On the assumption that we are building out a Bastion, name your new security group as `Bastion` with only SSH access as default.
+```bash
+#!/bin/bash -xe
+sudo apt-get update -y
+sudo apt-get -y -f install mysql-client
+```
 
-2.15\. Click the **Review and Launch** button after configuring the security group.
+7.7\. Click **Next: Add Storage**.
 
-2.16\. Review your cofiguration and choices, and then click **Launch**.
+7.8\. On this page you have the ability to modify or add storage and disk drives to the instance. For this lab, we will simply accept the storage defaults and click **Next: Add Tags**.
 
-2.17\. Select the key pair that you created in the beginning of this lab from the drop-down and check the **"I acknowledge"** checkbox. Then click the **Launch Instances** button.
+7.8\. In order to identify our instance with a friendly name add a tag to the instance, type a key of `Name` and the value of `Bastion`, click on **Next: Configure Security Group**.
 
-Now you can try [connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
+7.10\. You will be prompted to create a new security group, instead we are going to select **Select an existing security group** and check the security group name **bastion**.
+
+7.11\. Choose **Review and Launch**.
+
+7.12\. Review your cofiguration and choices, and then choose **Launch**.
+
+7.13\. Select the key pair that you created in the beginning of this lab from the drop-down and check the **"I acknowledge"** checkbox. Then click the **Launch Instances** button and **View Instances**.
+
+[Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
+[Connecting to Your Linux Instance Using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
