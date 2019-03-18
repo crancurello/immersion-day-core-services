@@ -29,20 +29,31 @@
 2.6\. Fill out the DB Instance details with the following information and click **Next**:
 
 •	**DB engine version:** `Use the default engine version`
+
 •	**DB Instance class:** `db.t2.micro`
+
 •	**Storage type:** `General Purpose (SSD)`
+
 •	**Allocated Storage:** `20 GB`
+
 •	**DB instance identifier:** `our-experiences`
+
 •	**Master username:** `awsuser`
+
 •	**Master Password:** `awspassword`
 
 2.7\.	In **Configure Advanced Settings**, fill out Network & Security with the following information:
 
 •	**Virtual Private Cloud (VPC):** `My VPC`
+
 •	**Subnet group:** `privatedbgroup`
+
 •	**Public accessibility:** `No`
+
 •	**Availability zone:** `No Preference`
+
 •	**VPC security groups:** Select **Choose existing VPC security groups**, then pick `our-experiences-db`, remove the default security group.
+
 •	**Database nema:** `our_experiences`.
 
 2.8\.	Choose **Create database** and **View DB Instance details**.

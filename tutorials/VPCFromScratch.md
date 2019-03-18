@@ -57,7 +57,7 @@
             
 1.19\. To update these settings, choose **Actions** and either **Edit DNS Resolution** or **Edit DNS Hostnames**. In the dialog box that opens, check the **enable** option, and then choose **Save**.
 
-## 2. Create the Security Groupd for the Application Laod Balancer
+## 2. Create the Security Group for the Application Laod Balancer
 
 2.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
@@ -74,14 +74,16 @@
 2.7\. In the dialog, choose **Add Rule** and do the following:
 
 •	**Type:** `HTTP`
+
 •	**Protocol:** `TCP`
+
 •	**Port Range:** `80`
+
 •	**Source:** `Anywhere 0.0.0.0/0`
 
 2.8\. Choose **Save rules** and **Close**.
 
-
-## 3. Create the Security Groupd for the WebServers
+## 3. Create the Security Group for the WebServers
 
 3.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
@@ -98,13 +100,16 @@
 3.7\. In the dialog, choose **Add Rule** and do the following:
 
 •	**Type:** `HTTP`
+
 •	**Protocol:** `TCP`
+
 •	**Port Range:** `80`
+
 •	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences-alb**
 
 3.8\. Choose **Save rules** and **Close**.
 
-## 4. Create the Security Groupd for the Bastion Instance
+## 4. Create the Security Group for the Bastion Instance
 
 4.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
@@ -121,13 +126,16 @@
 4.7\. In the dialog, choose **Add Rule** and do the following:
 
 •	**Type:** `SSH`
+
 •	**Protocol:** `TCP`
+
 •	**Port Range:** `22`
+
 •	**Source:** `Anywhere 0.0.0.0/0`
 
 4.8\. Choose **Save rules** and **Close**.
 
-## 5. Create the Security Groupd for database RDS Instance
+## 5. Create the Security Group for database RDS Instance
 
 5.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
@@ -144,13 +152,20 @@
 5.7\. In the dialog, choose **Add Rule** and add the following rules:
 
 •	**Type:** `MYSQL/Aurora`
+
 •	**Protocol:** `TCP`
+
 •	**Port Range:** `3306`
+
 •	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences**
 
+
 •	**Type:** `MYSQL/Aurora`
+
 •	**Protocol:** `TCP`
+
 •	**Port Range:** `3306`
+
 •	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **bastion**
 
 5.8\. Choose **Save rules** and **Close**.
@@ -208,4 +223,5 @@ sudo apt-get -y -f install mysql-client
 7.13\. Select the key pair that you created in the beginning of this lab from the drop-down and check the **"I acknowledge"** checkbox. Then click the **Launch Instances** button and **View Instances**.
 
 [Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
+
 [Connecting to Your Linux Instance Using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
