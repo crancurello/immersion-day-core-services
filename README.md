@@ -6,7 +6,7 @@ In this workshop, you will build 2-tier application architecture with Auto Scali
 
 See the diagram below for a depiction of the complete architecture.
 
-![Immersion Day Core Services with Auto Scaling](https://github.com/aurbac/codedeploy-codepipeline-with-laravel/raw/master/images/continuos-deployment-aws.png)
+![Immersion Day Core Services with Auto Scaling](images/aws.png)
 
 ## Modules
 
