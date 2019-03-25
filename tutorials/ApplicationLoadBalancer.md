@@ -37,15 +37,3 @@
 1.9\. Choose **Next: Register Targets**.
 
 1.10\. Choose **Next: Review**, click on **Create** and **Close**.
-
-## 2. Enable Stickiness for our Application Load Balancer
-
-2.1\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
-
-2.2\. In the navigation pane, under **LOAD BALANCING**, choose **Target Groups**.
-
-2.3\. Select **our-experiences**, in the **Description** choose **Edit attributes**.
-
-2.3\. For **Stickiness** select **Enable** and for **Stickiness duration** type `5` in **minutes**.
-
-2.4\. Choose **Save**.
