@@ -41,9 +41,6 @@ sudo sed -i 's/AWS_BUCKET=/AWS_BUCKET='$BUCKET_NAME'/g' /var/www/html/.env
 sudo sed -i 's/SESSION_DRIVER=file/SESSION_DRIVER=database/g' /var/www/html/.env
 sudo sed -i 's/SESSION_CONNECTION=/SESSION_CONNECTION=mysql/g' /var/www/html/.env
 
-SESSION_DRIVER=file
-SESSION_CONNECTION=
-
 sudo cd /var/www/html
 sudo /usr/local/bin/composer install --working-dir=/var/www/html --optimize-autoloader --no-dev
 
