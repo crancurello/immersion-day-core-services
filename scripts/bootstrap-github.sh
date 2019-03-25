@@ -44,7 +44,6 @@ sudo sed -i 's/SESSION_CONNECTION=/SESSION_CONNECTION=mysql/g' /var/www/html/.en
 sudo cd /var/www/html
 sudo /usr/local/bin/composer install --working-dir=/var/www/html --optimize-autoloader --no-dev
 
-sudo /usr/bin/php /var/www/html/artisan key:generate
 sudo /usr/bin/php /var/www/html/artisan config:cache
 sudo /usr/bin/php /var/www/html/artisan config:clear
 sudo /usr/bin/php /var/www/html/artisan cache:clear
