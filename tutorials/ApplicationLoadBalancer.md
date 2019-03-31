@@ -24,9 +24,9 @@
 
 •	**Availability Zones:** Select the check box for the Availability Zones to enable for your load balancer. For **us-east-1a** select the **Public Subnet 01** and for **us-east-1b** select **Public Subnet 02**.
 
-1.6\. Choose **Next: Configure Security Settings**.
-
 ![Configure Load Balancer](../images/alb.png)
+
+1.6\. Choose **Next: Configure Security Settings**.
 
 1.7\. choose **Next: Configure Security Groups**.
 
