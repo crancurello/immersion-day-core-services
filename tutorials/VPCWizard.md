@@ -20,7 +20,7 @@
 
 ![Launch VPC Wizard](../images/launch-vpc-wizard.png)
 
-2.3\. Choose the first option, VPC with a Single Public Subnet, and then choose Select.
+2.3\. Choose the second option, **VPC with Public and Private Subnets**, and then choose **Select**.
 
 ![Select a VPC Configuration](../images/select-wizard.png)
 
@@ -63,7 +63,7 @@
 | Public Subnet 02  | My VPC | us-east-1b | 10.1.1.0/24 |
 | Private Subnet 02  | My VPC | us-east-1b | 10.1.3.0/24 |
 
-2.8\. With the filter applied with your VPC Id, you will see the four subnets, two publics and two privates.
+2.8\. With the filter applied with your VPC ID, you will see the four subnets, two publics and two privates.
 
 ![Your Subnets](../images/subnets.png)
 
