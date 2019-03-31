@@ -10,6 +10,8 @@
 
 1.4\. On the **Select load balancer type** page, choose **Application Load Balancer** and then choose **Create**.
 
+![ALB Select](../images/alb-select.png)
+
 1.5\. Complete the **Configure Load Balancer** page as follows:
 
 •	**Name:** `our-experiences`
@@ -32,9 +34,13 @@
 
 1.8\. Select the existing security group **our-experiences-alb** and choose **Next: Configure Routing**.
 
+![ALB SG](../images/alb-sg.png)
+
 1.9\. In the **Configure Routing** section, for **Name** type `our-experiences`, for Target type choose **Instance**.
 
 1.10\. Expand **Advanced health check settings** section, for **Healthy threshold** type `2`.
+
+![ALB Routing](../images/alb-routing.png)
 
 1.11\. Choose **Next: Register Targets**.
 
