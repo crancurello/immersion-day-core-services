@@ -24,16 +24,18 @@
 
 •	**Availability Zones:** Select the check box for the Availability Zones to enable for your load balancer. For **us-east-1a** select the **Public Subnet 01** and for **us-east-1b** select **Public Subnet 02**.
 
+1.6\. Choose **Next: Configure Security Settings**.
+
 ![Configure Load Balancer](../images/alb.png)
 
-1.6\. Choose **Next: Configure Security Settings** and choose **Next: Configure Security Groups**.
+1.7\. choose **Next: Configure Security Groups**.
 
-1.7\. Select the existing security group **our-experiences-alb** and choose **Next: Configure Routing**.
+1.8\. Select the existing security group **our-experiences-alb** and choose **Next: Configure Routing**.
 
-1.8\. In the **Configure Routing** section, for **Name** type `our-experiences`, for Target type choose **Instance**.
+1.9\. In the **Configure Routing** section, for **Name** type `our-experiences`, for Target type choose **Instance**.
 
-1.8\. Expand **Advanced health check settings** section, for **Healthy threshold** type `2`.
+1.10\. Expand **Advanced health check settings** section, for **Healthy threshold** type `2`.
 
-1.9\. Choose **Next: Register Targets**.
+1.11\. Choose **Next: Register Targets**.
 
-1.10\. Choose **Next: Review**, click on **Create** and **Close**.
+1.12\. Choose **Next: Review**, click on **Create** and **Close**.
