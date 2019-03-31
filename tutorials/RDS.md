@@ -1,6 +1,6 @@
 # Getting Started with Amazon RDS
 
-## 1. Create a subnet group
+## 1. Create a Subnet Group
 
 1.1\.	Sign into the AWS Management Console and open the Amazon RDS console at https://console.aws.amazon.com/rds.
 
@@ -59,6 +59,8 @@
 2.8\.	Choose **Create database** and **View DB Instance details**.
 
 2.9\. From the **Connectivity & security** description, copy the **Endpoint** once is available, you will use it in the next section.
+
+**Note**: This may take up to 5 minutes as the database is being created and backed up, once is available you can continue.
 
 ## 3. Creating the database Tables
 
