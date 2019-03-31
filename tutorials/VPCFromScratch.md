@@ -53,9 +53,13 @@
 
 1.16\. In the navigation pane, choose **Your VPCs**.
 
-1.17\. Select the VPC **My VPC** from the list, choose **Actions** and **Edit DNS Hostnames**. In the dialog box that opens, check the **enable** option, and then choose **Save**.
+1.17\. Select the VPC **My VPC** from the list, choose **Actions** and **Edit DNS Hostnames**.
 
-1.18\. Review the information of **My VPC** in the **Summary** tab. Make sure both settings for **DNS resolution** and **DNS hostnames** are enabled.
+![Edit DNS Hostnames](../images/edit-dns-hostnames.png)
+
+1.18\. In the dialog box that opens, check the **enable** option, and then choose **Save**.
+
+1.19\. Review the information of **My VPC** in the **Summary** tab. Make sure both settings for **DNS resolution** and **DNS hostnames** are enabled.
             
 ![VPC Enabled](../images/vpc-enabled.png)
 
