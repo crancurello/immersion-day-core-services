@@ -253,13 +253,13 @@ sudo apt-get -y -f install mysql-client
 
 8.8\. On this page you have the ability to modify or add storage and disk drives to the instance. For this lab, we will simply accept the storage defaults and click **Next: Add Tags**.
 
-![Bastion Tags](../images/bastion-tags.png)
-
 8.8\. In order to identify our instance with a friendly name add a tag to the instance, click on **Add Tag**, type a key of `Name` and the value of `Bastion`, click on **Next: Configure Security Group**.
 
-![Bastion Security Groups](../images/bastion-sg.png)
+![Bastion Tags](../images/bastion-tags.png)
 
 8.10\. You will be prompted to create a new security group, instead we are going to select **Select an existing security group** and check the security group name **bastion**.
+
+![Bastion Security Groups](../images/bastion-sg.png)
 
 8.11\. Choose **Review and Launch**.
 
