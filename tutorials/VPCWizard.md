@@ -259,9 +259,9 @@ sudo apt-get -y -f install mysql-client
 
 8.10\. You will be prompted to create a new security group, instead we are going to select **Select an existing security group** and check the security group name **bastion**.
 
-![Bastion Security Groups](../images/bastion-sg.png)
-
 8.11\. Choose **Review and Launch**.
+
+![Bastion Security Groups](../images/bastion-sg.png)
 
 8.12\. Review your cofiguration and choices, and then choose **Launch**.
 
