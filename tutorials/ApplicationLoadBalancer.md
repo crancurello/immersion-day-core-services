@@ -28,7 +28,7 @@
 
 1.6\. Choose **Next: Configure Security Settings**.
 
-1.7\. choose **Next: Configure Security Groups**.
+1.7\. Choose **Next: Configure Security Groups**.
 
 1.8\. Select the existing security group **our-experiences-alb** and choose **Next: Configure Routing**.
 
