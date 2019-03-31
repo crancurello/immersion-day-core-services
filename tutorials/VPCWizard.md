@@ -231,7 +231,11 @@ Another rule:
 
 8.3\. In the Quick Start section, select the **Ubuntu Server 16.04 LTS (HVM)** AMI and click **Select**.
 
+![Bastion Select AMI](../images/bastion-select-ami.png)
+
 8.4\. In the Choose Instance Type tab, select the **t2.micro** instance size and click **Next: Configure Instance Desatils**.
+
+![Bastion Select Instance Type](../images/bastion-select-instance-type.png)
 
 8.5\. On the Configure Instance Details page, select your network **My VPC** created and the **Public Subnet 01**, for Auto-assign Public IP select **Enable**. 
 
@@ -243,11 +247,17 @@ sudo apt-get update -y
 sudo apt-get -y -f install mysql-client
 ```
 
+![Bastion Configuration](../images/bastion-configuration.png)
+
 8.7\. Click **Next: Add Storage**.
 
 8.8\. On this page you have the ability to modify or add storage and disk drives to the instance. For this lab, we will simply accept the storage defaults and click **Next: Add Tags**.
 
+![Bastion Tags](../images/bastion-tags.png)
+
 8.8\. In order to identify our instance with a friendly name add a tag to the instance, click on **Add Tag**, type a key of `Name` and the value of `Bastion`, click on **Next: Configure Security Group**.
+
+![Bastion Security Groups](../images/bastion-sg.png)
 
 8.10\. You will be prompted to create a new security group, instead we are going to select **Select an existing security group** and check the security group name **bastion**.
 
@@ -255,7 +265,7 @@ sudo apt-get -y -f install mysql-client
 
 8.12\. Review your cofiguration and choices, and then choose **Launch**.
 
-8.13\. Select the key pair that you created in the beginning of this lab from the drop-down and check the **"I acknowledge"** checkbox. Then click the **Launch Instances** button and **View Instances**.
+8.13\. Select the key pair **ImmersionDay** that you created and check the **"I acknowledge"** checkbox. Then click the **Launch Instances** button and **View Instances**.
 
 [Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
 
