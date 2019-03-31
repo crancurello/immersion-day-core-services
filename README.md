@@ -16,7 +16,7 @@ For building out your architecture, you must complete the following modules in *
 
 1\. [Getting Started with AWS IAM](tutorials/IAM.md "AWS IAM")
 
-2\. [Getting Started with Amazon VPC](tutorials/VPCFromScratch.md "Amazon VPC")
+2\. [Getting Started with Amazon VPC](tutorials/VPCWizard.md "Amazon VPC")
 
 3\. [Getting Started with Application Load Balancer](tutorials/ApplicationLoadBalancer.md "Application Load Balancer")
 

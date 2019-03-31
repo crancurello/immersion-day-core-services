@@ -6,11 +6,11 @@
 
 1.2\. In the upper-right corner of the AWS Management Console, confirm you are in the desired AWS region (e.g., Virginia).
 
-1.3\. In the navigation pane, choose Your VPCs and click on **Create VPC**.
+1.3\. In the navigation pane, choose **Your VPCs** and click on **Create VPC**.
 
 1.4\. For the Name tag type `My VPC` and use the IPv4 CIDR block of `10.1.0.0/16`, click on **Create** and click on **Close**.
 
-1.5\. In the navigation pane, choose Subnets, we are going to create four subnets as follows:
+1.5\. In the navigation pane, choose **Subnets**, we are going to create four subnets as follows:
 
 | Name tag | VPC | Availability Zone | IPv4 CIDR block |
 | ------:| -----------:| -----------:| -----------:|
@@ -19,19 +19,19 @@
 | Private Subnet 01  | My VPC | us-east-1a | 10.1.2.0/24 |
 | Private Subnet 02  | My VPC | us-east-1b | 10.1.3.0/24 |
 
-1.6\. In the navigation pane, choose Route Tables and click **Create route table**.
+1.6\. In the navigation pane, choose **Route Tables** and click **Create route table**.
 
 1.7\. For the Name tag type `Public Route` and select `My VPC`, click on **Create** and click on **Close**.
 
-1.8\. In the navigation pane, choose Internet Gateways and click **Create Internet gateway**, type Name Tag with `My IG`, click on **Create** and click on **Close**.
+1.8\. In the navigation pane, choose **Internet Gateways** and click **Create Internet gateway**, type Name Tag with `My IG`, click on **Create** and click on **Close**.
 
 1.9\. Select `My IG` and click on **Actions > Attach to VPC**, choose `My VPC` and click **Attach**.
 
-1.10\. In the navigation pane, choose NAT Gateways and click **Create NAT Gateway**.
+1.10\. In the navigation pane, choose **NAT Gateways** and click **Create NAT Gateway**.
 
 1.11\. Select the Subnet ID for your Public Subnet 01 that you copied earlier, click on **Create New IP** and click on **Create a NAT Gateway** and click on **Close**.
 
-1.12\. In the navigation pane, choose Route Tables and apply a filter using the VPC ID that you copied earlier, select the **Public Route**, click on **Routes** and click on **Edit Routes**, apply the following routes and click **Save routes**.
+1.12\. In the navigation pane, choose **Route Tables** and apply a filter using the VPC ID that you copied earlier, select the **Public Route**, click on **Routes** and click on **Edit Routes**, apply the following routes and click **Save routes**.
 
 | Destination | Target | 
 | ------:| -----------:| 

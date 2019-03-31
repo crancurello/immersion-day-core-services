@@ -1,0 +1,250 @@
+# Getting Started with Amazon VPC
+
+## 1. Create an Elastic IP for the NAT Gateway
+
+1.1\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+1.2\. In the navigation pane, choose **Elastic IPs**.
+
+1.3\. Choose **Allocate new address**.
+
+1.4\. For **IPv4 address pool**, choose **Amazon pool**.
+
+1.5\. Choose **Allocate**, and close the confirmation screen.
+
+## 2. Create a VPC using the Amazon VPC Wizard
+
+2.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
+
+2.2\. In the navigation pane, choose **VPC Dashboard**. From the dashboard, choose **Launch VPC Wizard**.
+
+![Launch VPC Wizard](../images/launch-vpc-wizard.png)
+
+2.3\. Choose the first option, VPC with a Single Public Subnet, and then choose Select.
+
+![Select a VPC Configuration](../images/select-wizard.png)
+
+2.4\. On the configuration page, enter the following information and choose **Create VPC**.
+
+•	**IPv4 CIDR block:** `10.1.0.0/16`
+
+•	**VPC name:** `My VPC`
+
+•	**Public subnet's IPv4 CIDR:** `10.1.0.0/24`
+
+•	**Availability Zone:** `us-east-1a`
+
+•	**Public subnet name:** `Public Subnet 01`
+
+•	**Private subnet's IPv4 CIDR:** `10.1.2.0/24`
+
+•	**Availability Zone:** `us-east-1a`
+
+•	**Private subnet name:** `Private Subnet 01`
+
+•	**Elastic IP Allocation ID:** Select your Allocation ID previously created `eipalloc-XXXXXXXXXXXXXX`
+
+•	**Enable DNS hostnames:** `Yes`
+
+![Select a VPC Configuration](../images/public-private-wizard.png)
+
+2.5\. A status window shows the work in progress. When the work completes, choose **OK** to close the status window.
+
+2.6\. The **Your VPCs** page displays your default VPC and the VPC that you just created. The VPC that you created is a nondefault VPC, therefore the **Default VPC** column displays **No**.
+
+**Note** - Copy the **VPC ID** from **My VPC**.
+
+![Your VPCs](../images/vpcs.png)
+
+2.7\. In the navigation pane, choose **Subnets**, apply a filter using the VPC ID that you copied earlier and choose **Create subnet**, we are going to create two more subnets with the configuration settings as follows:
+
+| Name tag | VPC | Availability Zone | IPv4 CIDR block |
+| ------:| -----------:| -----------:| -----------:|
+| Public Subnet 02  | My VPC | us-east-1b | 10.1.1.0/24 |
+| Private Subnet 02  | My VPC | us-east-1b | 10.1.3.0/24 |
+
+2.8\. With the filter applied with your VPC Id, you will see the four subnets, two publics and two privates.
+
+![Your Subnets](../images/subnets.png)
+
+2.9\. In the navigation pane, choose **Route Tables** and apply a filter using the VPC ID that you copied earlier, one of your route tables for the **Main** column displays **Yes**, you can edit the names by clicking on the pencil, for the **Main** route table type `Private Route` and for the other one type `Public Route`. 
+
+![Route Tables](../images/route-tables.png)
+
+2.10\. Select your **Public Route**, click on **Subnet Associations** and click on **Edit subnet associations**.
+
+2.11\. Select the subnets **10.1.0.0/24** (Public Subnet 01) and **10.1.1.0/24** (Public Subnet 02) and click on **Save**.
+
+![Subnets for the Public Route](../images/route-edit-subnets.png)
+
+2.12\. Now you have a VPC network with public and private subnets.
+
+## 3. Create the Security Group for the Application Laod Balancer
+
+3.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
+
+3.2\. In the navigation pane, choose **Security Groups**.
+
+3.3\. Choose **Create Security Group**.
+
+3.4\. Enter a name of the security group `our-experiences-alb` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+
+3.5\. Select the security group **our-experiences-alb**.
+
+3.6\. On the **Inbound Rules** tab, choose **Edit rules**.
+
+3.7\. In the dialog, choose **Add Rule** and do the following:
+
+•	**Type:** `HTTP`
+
+•	**Protocol:** `TCP`
+
+•	**Port Range:** `80`
+
+•	**Source:** `Anywhere 0.0.0.0/0`
+
+3.8\. Choose **Save rules** and **Close**.
+
+## 4. Create the Security Group for the WebServers
+
+4.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
+
+4.2\. In the navigation pane, choose **Security Groups**.
+
+4.3\. Choose **Create Security Group**.
+
+4.4\. Enter a name of the security group `our-experiences` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+
+4.5\. Select the security group **our-experiences**.
+
+4.6\. On the **Inbound Rules** tab, choose **Edit rules**.
+
+4.7\. In the dialog, choose **Add Rule** and do the following:
+
+•	**Type:** `HTTP`
+
+•	**Protocol:** `TCP`
+
+•	**Port Range:** `80`
+
+•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences-alb**
+
+4.8\. Choose **Save rules** and **Close**.
+
+## 5. Create the Security Group for the Bastion Instance
+
+5.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
+
+5.2\. In the navigation pane, choose **Security Groups**.
+
+5.3\. Choose **Create Security Group**.
+
+5.4\. Enter a name of the security group `bastion` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+
+5.5\. Select the security group **bastion**.
+
+5.6\. On the **Inbound Rules** tab, choose **Edit rules**.
+
+5.7\. In the dialog, choose **Add Rule** and do the following:
+
+•	**Type:** `SSH`
+
+•	**Protocol:** `TCP`
+
+•	**Port Range:** `22`
+
+•	**Source:** `Anywhere 0.0.0.0/0`
+
+5.8\. Choose **Save rules** and **Close**.
+
+## 6. Create the Security Group for database RDS Instance
+
+6.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
+
+6.2\. In the navigation pane, choose **Security Groups**.
+
+6.3\. Choose **Create Security Group**.
+
+6.4\. Enter a name of the security group `our-experiences-db` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+
+6.5\. Select the security group **our-experiences-db**.
+
+6.6\. On the **Inbound Rules** tab, choose **Edit rules**.
+
+6.7\. In the dialog, choose **Add Rule** and add the following rules:
+
+•	**Type:** `MYSQL/Aurora`
+
+•	**Protocol:** `TCP`
+
+•	**Port Range:** `3306`
+
+•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences**
+
+Another rule:
+
+•	**Type:** `MYSQL/Aurora`
+
+•	**Protocol:** `TCP`
+
+•	**Port Range:** `3306`
+
+•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **bastion**
+
+6.8\. Choose **Save rules** and **Close**.
+
+### 7. Create a new Key Pair
+
+7.1\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+7.2\. Click on **Key Pairs** in the NETWORK & SECURITY section near the bottom of the leftmost menu. This will display a page to manage your SSH key pairs. 
+
+7.3\. To create a new SSH key pair, click the **Create Key Pair** button at the top of the browser window.
+
+7.4\. In the resulting pop up window, type `ImmersionDay` into the Key Pair Name: text box and click **Create**.
+
+7.5\. The page will download the file **ImmersionDay.pem** to the local drive.  Follow the browser instructions to save the file to the default download location.
+
+7.6\. Remember the full path to the file .pem file you just downloaded.
+
+**NOTE**: You will use the Key Pair you just created to manage your EC2 instances for the rest of the labs.
+
+### 8. Create the Bastion EC2 Instance
+
+**Bastion Hosts**: Including bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet. After you set up your bastion hosts, you can access the other instances in your VPC through Secure Shell (SSH) connections on Linux. Bastion hosts are also configured with security groups to provide fine-grained ingress control.
+
+8.1\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+8.2\. Click on **Launch Instance**.
+
+8.3\. In the Quick Start section, select the **Ubuntu Server 16.04 LTS (HVM)** AMI and click **Select**.
+
+8.4\. In the Choose Instance Type tab, select the **t2.micro** instance size and click **Next: Configure Instance Desatils**.
+
+8.5\. On the Configure Instance Details page, select your network **My VPC** created and the **Public Subnet 01**, for Auto-assign Public IP select **Enable**. 
+
+8.6\. Expand **Advanced Details** and copy and paste the following lines **As text**.
+
+```bash
+#!/bin/bash -xe
+sudo apt-get update -y
+sudo apt-get -y -f install mysql-client
+```
+
+8.7\. Click **Next: Add Storage**.
+
+8.8\. On this page you have the ability to modify or add storage and disk drives to the instance. For this lab, we will simply accept the storage defaults and click **Next: Add Tags**.
+
+8.8\. In order to identify our instance with a friendly name add a tag to the instance, click on **Add Tag**, type a key of `Name` and the value of `Bastion`, click on **Next: Configure Security Group**.
+
+8.10\. You will be prompted to create a new security group, instead we are going to select **Select an existing security group** and check the security group name **bastion**.
+
+8.11\. Choose **Review and Launch**.
+
+8.12\. Review your cofiguration and choices, and then choose **Launch**.
+
+8.13\. Select the key pair that you created in the beginning of this lab from the drop-down and check the **"I acknowledge"** checkbox. Then click the **Launch Instances** button and **View Instances**.
+
+[Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
+
+[Connecting to Your Linux Instance Using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
