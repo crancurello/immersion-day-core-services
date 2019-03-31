@@ -6,13 +6,15 @@
 
 1.2\.	Click on **Subnet groups** and click on **Create DB Subnet Group**.
 
-1.3\.	Name your subnet group as `PrivateDBGroup` and a short description.
+1.3\.	For **Name** and **Description** type `PrivateDBGroup`.
 
 1.4\.	For the VPC select **My VPC**.
 
 1.5\.	In **Add subnets** section, select the Private Subnets, from **us-east-1a** select **10.1.2.0/24** (Private Subnet 01), choose **Add subnet** and for **us-east-1b** select **10.1.3.0/24** (Private Subnet 02), choose **Add subnet**.
 
 1.6\.	Choose **Create**.
+
+![RDS Subnet Group](../images/rds-subnet-group.png)
 
 ## 2. Launch an RDS Instance
 
