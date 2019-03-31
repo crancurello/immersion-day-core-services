@@ -12,17 +12,17 @@
 
 1.5\. Complete the **Configure Load Balancer** page as follows:
 
-  a\. For **Name**, type `our-experiences` for your load balancer.
+•	**Name:** `our-experiences`
 
-  b\. For **Scheme**, use an internet-facing load balancer routes requests from clients over the internet to targets.
+•	**Scheme:** `internet-facing`.
 
-  c\. For **IP address type**, choose ipv4 to support IPv4 addresses only or dualstack to support both IPv4 and IPv6 addresses.
+•	**IP address type:** `ipv4`.
 
-  d\. For **Listeners**, the default is a listener that accepts HTTP traffic on port 80.
+•	**Listeners:** The default listener that accepts `HTTP` traffic on port `80`.
 
-  e\. For **VPC**, select the `My VPC`.
+•	**VPC** `My VPC`.
 
-  f\. For **Availability Zones**, select the check box for the Availability Zones to enable for your load balancer. For us-east-1a select the **Public Subnet 01** and for us-east-1b select **Public Subnet 02**.
+•	**Availability Zones:** Select the check box for the Availability Zones to enable for your load balancer. For **us-east-1a** select the **Public Subnet 01** and for **us-east-1b** select **Public Subnet 02**.
 
 ![Configure Load Balancer](../images/alb.png)
 
