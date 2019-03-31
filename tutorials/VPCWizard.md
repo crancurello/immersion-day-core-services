@@ -83,11 +83,11 @@
 
 3.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
-3.2\. In the navigation pane, choose **Security Groups**.
+3.2\. In the navigation pane, choose **Security Groups** and apply a filter using your VPC ID.
 
-3.3\. Choose **Create Security Group**.
+3.3\. Choose **Create security group**.
 
-3.4\. Enter a name of the security group `our-experiences-alb` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+3.4\. For the **Security group name** and **Description** type `our-experiences-alb`. For **VPC** select your VPC ID **My VPC**, and choose **Create** and **Close**.
 
 3.5\. Select the security group **our-experiences-alb**.
 
@@ -103,17 +103,19 @@
 
 •	**Source:** `Anywhere 0.0.0.0/0`
 
-3.8\. Choose **Save rules** and **Close**.
+3.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
+
+![Our Experiences ALB](../images/sg-our-experiences-alb.png)
 
 ## 4. Create the Security Group for the WebServers
 
 4.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
-4.2\. In the navigation pane, choose **Security Groups**.
+4.2\. In the navigation pane, choose **Security Groups** and apply a filter using your VPC ID.
 
-4.3\. Choose **Create Security Group**.
+4.3\. Choose **Create security group**.
 
-4.4\. Enter a name of the security group `our-experiences` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+4.4\. For the **Security group name** and **Description** type `our-experiences`. For **VPC** select your VPC ID **My VPC**, and choose **Create** and **Close**.
 
 4.5\. Select the security group **our-experiences**.
 
@@ -129,17 +131,21 @@
 
 •	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences-alb**
 
-4.8\. Choose **Save rules** and **Close**.
+![Our Experiences](../images/sg-create-our-experiences.png)
+
+4.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
+
+![Our Experiences](../images/sg-our-experiences.png)
 
 ## 5. Create the Security Group for the Bastion Instance
 
 5.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
-5.2\. In the navigation pane, choose **Security Groups**.
+5.2\. In the navigation pane, choose **Security Groups** and apply a filter using your VPC ID.
 
-5.3\. Choose **Create Security Group**.
+5.3\. Choose **Create security group**.
 
-5.4\. Enter a name of the security group `bastion` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+5.4\. For the **Security group name** and **Description** type `bastion`. For **VPC** select your VPC ID **My VPC**, and choose **Create** and **Close**.
 
 5.5\. Select the security group **bastion**.
 
@@ -155,17 +161,19 @@
 
 •	**Source:** `Anywhere 0.0.0.0/0`
 
-5.8\. Choose **Save rules** and **Close**.
+5.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
+
+![Bastion](../images/sg-bastion.png)
 
 ## 6. Create the Security Group for database RDS Instance
 
 6.1\. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/.
 
-6.2\. In the navigation pane, choose **Security Groups**.
+6.2\. In the navigation pane, choose **Security Groups** and apply a filter using your VPC ID.
 
-6.3\. Choose **Create Security Group**.
+6.3\. Choose **Create security group**.
 
-6.4\. Enter a name of the security group `our-experiences-db` and provide a description. Select the ID of your VPC **My VPC** from the VPC menu, and choose **Create** and **Close**.
+6.4\. For the **Security group name** and **Description** type `our-experiences-db`. For **VPC** select your VPC ID **My VPC**, and choose **Create** and **Close**.
 
 6.5\. Select the security group **our-experiences-db**.
 
@@ -191,7 +199,11 @@ Another rule:
 
 •	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **bastion**
 
-6.8\. Choose **Save rules** and **Close**.
+![Our Experiences DB](../images/sg-create-our-experiences-db.png)
+
+6.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
+
+![Our Experiences DB](../images/sg-our-experiences-db.png)
 
 ### 7. Create a new Key Pair
 
