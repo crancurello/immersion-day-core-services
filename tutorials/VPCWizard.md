@@ -26,25 +26,16 @@
 
 2.4\. On the configuration page, enter the following information and choose **Create VPC**.
 
-•	**IPv4 CIDR block:** `10.1.0.0/16`
-
-•	**VPC name:** `My VPC`
-
-•	**Public subnet's IPv4 CIDR:** `10.1.0.0/24`
-
-•	**Availability Zone:** `us-east-1a`
-
-•	**Public subnet name:** `Public Subnet 01`
-
-•	**Private subnet's IPv4 CIDR:** `10.1.2.0/24`
-
-•	**Availability Zone:** `us-east-1a`
-
-•	**Private subnet name:** `Private Subnet 01`
-
-•	**Elastic IP Allocation ID:** Select your Allocation ID previously created `eipalloc-XXXXXXXXXXXXXX`
-
-•	**Enable DNS hostnames:** `Yes`
+* **`IPv4 CIDR block`**: `10.1.0.0/16`
+* **`VPC name`**: `My VPC`
+* **`Public subnet's IPv4 CIDR`**: `10.1.0.0/24`
+* **`Availability Zone`**: `us-east-1a`
+* **`Public subnet name`**: `Public Subnet 01`
+* **`Private subnet's IPv4 CIDR`**: `10.1.2.0/24`
+* **`Availability Zone`**: `us-east-1a`
+* **`Private subnet name`**: `Private Subnet 01`
+* **`Elastic IP Allocation ID`**: Select your Allocation ID previously created `eipalloc-XXXXXXXXXXXXXX`
+* **`Enable DNS hostnames`**: `Yes`
 
 ![Select a VPC Configuration](../images/public-private-wizard.png)
 
@@ -52,7 +43,7 @@
 
 2.6\. The **Your VPCs** page displays your default VPC and the VPC that you just created. The VPC that you created is a nondefault VPC, therefore the **Default VPC** column displays **No**.
 
-**Note** - Copy the **VPC ID** from **My VPC**.
+**Note**: Copy the **VPC ID** from **My VPC**.
 
 ![Your VPCs](../images/vpcs.png)
 
@@ -67,7 +58,7 @@
 
 ![Your Subnets](../images/subnets.png)
 
-2.9\. In the navigation pane, choose **Route Tables** and apply a filter using the VPC ID that you copied earlier, one of your route tables for the **Main** column displays **Yes**, you can edit the names by clicking on the pencil, for the **Main** route table type `Private Route` and for the other one type `Public Route`. 
+2.9\. In the navigation pane, choose **Route Tables** and apply a filter using the VPC ID that you copied earlier, one of your route tables for the **Main** column displays **Yes**, edit the names by clicking on the pencil, for the **Main** route table type `Private Route` and for the other one type `Public Route` as follows.
 
 ![Route Tables](../images/route-tables.png)
 

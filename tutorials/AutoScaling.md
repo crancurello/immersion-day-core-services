@@ -12,9 +12,7 @@
 
 1.5\.	On the Choose Instance Type page, select a **t2.micro** for your instance. Choose **Next: Configure details**.
 
-1.6\.	On the Choose Instance Type page, select a **t2.micro** for your instance. Choose **Next: Configure details**.
-
-1.7\.	On the Configure Details page, do the following:
+1.6\.	On the Configure Details page, do the following:
 
 •	For **Name**, type `WebServers` for your launch configuration.
 
@@ -24,13 +22,13 @@
 
 •	Expand the section **Advanced Details**, copy the [content file](../scripts/bootstrap-github.sh), from the script replace `<ENDPOINT>` with the RDS instance endpoint and `<BUCKET_NAME>` with your bucket name created earlier, paste it in **User data** as text.
 
-1.8\.	Choose **Next: Add Storage** and **Next: Configure Security Group**.
+1.7\.	Choose **Next: Add Storage** and **Next: Configure Security Group**.
 
-1.9\.	Select **Select and existing security group** and select **our-experiences**, choose **Review** and for the Warning choose **Continue**.
+1.8\.	Select **Select and existing security group** and select **our-experiences**, choose **Review** and for the Warning choose **Continue**.
 
-1.10\.	Choose **Create launch configuration**.
+1.9\.	Choose **Create launch configuration**.
 
-1.11\.	Select the key pair that you created in the beginning of this lab from the drop-down and check the **"I acknowledge"** checkbox. Then choose **Create launch configuration** and **Close**.
+1.10\.	Select the key pair that you created in the beginning of this lab from the drop-down and check the **"I acknowledge"** checkbox. Then choose **Create launch configuration** and **Close**.
 
 ## 2. Create an Auto Scaling Group
 
