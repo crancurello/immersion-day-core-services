@@ -1,4 +1,4 @@
-# Getting Started with AWS IAM
+# Getting Started with Identity & Access Management
 
 ## 1. Create an IAM Role for EC2 Instance
 

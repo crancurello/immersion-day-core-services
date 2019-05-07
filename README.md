@@ -2,19 +2,21 @@
 
 Hello, this is a self-paced workshop designed to explore the AWS Core Services.
 
-In this workshop, you will build 2-tier application architecture with Auto Scaling that covers core services and best practices for Compute, Networking, Storage and Databases..
+In this workshop, you will build 2-tier application architecture with Auto Scaling that covers core services and best practices for Compute, Networking, Storage and Databases.
 
 See the diagram below for a depiction of the complete architecture.
 
 ![Immersion Day Core Services with Auto Scaling](tutorials/images/aws.png)
 
+## To start
+
+Visit the portal to get started: http://aws-core-services-as.ws.kabits.com
+
 ## Modules
 
-This workshop is broken up into multiple modules.
+You must complete the following modules in **US East (N. Virginia)** region in order before proceeding to the next:
 
-For building out your architecture, you must complete the following modules in **US East (N. Virginia)** region in order before proceeding to the next:
-
-1\. [Getting Started with AWS IAM](tutorials/getting-started-with-aws-iam.md "AWS IAM")
+1\. [Getting Started with Identity & Access Management](tutorials/getting-started-with-aws-iam.md "AWS IAM")
 
 2\. [Getting Started with Amazon VPC](tutorials/getting-started-with-amazon-vpc.md "Amazon VPC")
 
