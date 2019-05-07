@@ -18,11 +18,11 @@
 
 2.2\. In the navigation pane, choose **VPC Dashboard**. From the dashboard, choose **Launch VPC Wizard**.
 
-![Launch VPC Wizard](../images/launch-vpc-wizard.png)
+![Launch VPC Wizard](images/launch-vpc-wizard.png)
 
 2.3\. Choose the second option, **VPC with Public and Private Subnets**, and then choose **Select**.
 
-![Select a VPC Configuration](../images/select-wizard.png)
+![Select a VPC Configuration](images/select-wizard.png)
 
 2.4\. On the configuration page, enter the following information and choose **Create VPC**.
 
@@ -37,7 +37,7 @@
 * **`Elastic IP Allocation ID`**: Select your Allocation ID previously created `eipalloc-XXXXXXXXXXXXXX`
 * **`Enable DNS hostnames`**: `Yes`
 
-![Select a VPC Configuration](../images/public-private-wizard.png)
+![Select a VPC Configuration](images/public-private-wizard.png)
 
 2.5\. A status window shows the work in progress. When the work completes, choose **OK** to close the status window.
 
@@ -45,7 +45,7 @@
 
 **Note**: Copy the **VPC ID** from **My VPC**.
 
-![Your VPCs](../images/vpcs.png)
+![Your VPCs](images/vpcs.png)
 
 2.7\. In the navigation pane, choose **Subnets**, apply a filter using the VPC ID that you copied earlier and choose **Create subnet**, we are going to create two more subnets with the configuration settings as follows:
 
@@ -56,17 +56,17 @@
 
 2.8\. With the filter applied with your VPC ID, you will see the four subnets, two publics and two privates.
 
-![Your Subnets](../images/subnets.png)
+![Your Subnets](images/subnets.png)
 
 2.9\. In the navigation pane, choose **Route Tables** and apply a filter using the VPC ID that you copied earlier, one of your route tables for the **Main** column displays **Yes**, edit the names by clicking on the pencil, for the **Main** route table type `Private Route` and for the other one type `Public Route` as follows.
 
-![Route Tables](../images/route-tables.png)
+![Route Tables](images/route-tables.png)
 
 2.10\. Select your **Public Route**, click on **Subnet Associations** and click on **Edit subnet associations**.
 
 2.11\. Select the subnets **10.1.0.0/24** (Public Subnet 01) and **10.1.1.0/24** (Public Subnet 02) and click on **Save**.
 
-![Subnets for the Public Route](../images/route-edit-subnets.png)
+![Subnets for the Public Route](images/route-edit-subnets.png)
 
 2.12\. Now you have a VPC network with public and private subnets.
 
@@ -96,7 +96,7 @@
 
 3.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
 
-![Our Experiences ALB](../images/sg-our-experiences-alb.png)
+![Our Experiences ALB](images/sg-our-experiences-alb.png)
 
 ## 4. Create the Security Group for the WebServers
 
@@ -122,11 +122,11 @@
 
 •	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences-alb**
 
-![Our Experiences](../images/sg-create-our-experiences.png)
+![Our Experiences](images/sg-create-our-experiences.png)
 
 4.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
 
-![Our Experiences](../images/sg-our-experiences.png)
+![Our Experiences](images/sg-our-experiences.png)
 
 ## 5. Create the Security Group for the Bastion Instance
 
@@ -154,7 +154,7 @@
 
 5.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
 
-![Bastion](../images/sg-bastion.png)
+![Bastion](images/sg-bastion.png)
 
 ## 6. Create the Security Group for database RDS Instance
 
@@ -190,11 +190,11 @@ Another rule:
 
 •	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **bastion**
 
-![Our Experiences DB](../images/sg-create-our-experiences-db.png)
+![Our Experiences DB](images/sg-create-our-experiences-db.png)
 
 6.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
 
-![Our Experiences DB](../images/sg-our-experiences-db.png)
+![Our Experiences DB](images/sg-our-experiences-db.png)
 
 ### 7. Create a new Key Pair
 
@@ -222,11 +222,11 @@ Another rule:
 
 8.3\. In the Quick Start section, select the **Ubuntu Server 16.04 LTS (HVM)** AMI and click **Select**.
 
-![Bastion Select AMI](../images/bastion-select-ami.png)
+![Bastion Select AMI](images/bastion-select-ami.png)
 
 8.4\. In the Choose Instance Type tab, select the **t2.micro** instance size and click **Next: Configure Instance Desatils**.
 
-![Bastion Select Instance Type](../images/bastion-select-instance-type.png)
+![Bastion Select Instance Type](images/bastion-select-instance-type.png)
 
 8.5\. On the Configure Instance Details page, select your network **My VPC** created and the **Public Subnet 01**, for Auto-assign Public IP select **Enable**. 
 
@@ -238,7 +238,7 @@ sudo apt-get update -y
 sudo apt-get -y -f install mysql-client
 ```
 
-![Bastion Configuration](../images/bastion-configuration.png)
+![Bastion Configuration](images/bastion-configuration.png)
 
 8.7\. Click **Next: Add Storage**.
 
@@ -246,13 +246,13 @@ sudo apt-get -y -f install mysql-client
 
 8.8\. In order to identify our instance with a friendly name add a tag to the instance, click on **Add Tag**, type a key of `Name` and the value of `Bastion`, click on **Next: Configure Security Group**.
 
-![Bastion Tags](../images/bastion-tags.png)
+![Bastion Tags](images/bastion-tags.png)
 
 8.10\. You will be prompted to create a new security group, instead we are going to select **Select an existing security group** and check the security group name **bastion**.
 
 8.11\. Choose **Review and Launch**.
 
-![Bastion Security Groups](../images/bastion-sg.png)
+![Bastion Security Groups](images/bastion-sg.png)
 
 8.12\. Review your cofiguration and choices, and then choose **Launch**.
 

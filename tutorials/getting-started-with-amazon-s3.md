@@ -18,7 +18,7 @@
 
 1.5\.	Choose **Create**.
 
-![S3 Create](../images/s3-create.png)
+![S3 Create](images/s3-create.png)
 
 ## 2. Editing Public Access Settings for an S3 Bucket
 
@@ -36,7 +36,7 @@
 
 •	**Remove public access granted through public ACLs (Recommended).**
 
-![S3 Permissions](../images/s3-permissions.png)
+![S3 Permissions](images/s3-permissions.png)
 
 2.6\.	Choose **Save**.
 

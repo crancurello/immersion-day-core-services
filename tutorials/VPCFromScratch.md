@@ -40,7 +40,7 @@
 
 1.13\. In the **Public Route**, click on **Subnet Associations** and click on **Edit subnet associations**, select the subnets **10.1.0.0/24** (Public Subnet 01) and **10.1.1.0/24** (Public Subnet 02) and click on **Save**.
 
-![Subnets for the Public Route](../images/route-edit-subnets.png)
+![Subnets for the Public Route](images/route-edit-subnets.png)
 
 1.14\. Now select the **Main** route table, this is our route table for private subnets, click on **Routes** and click on **Edit Routes**, apply the following routes and click **Save routes**.
 
@@ -55,13 +55,13 @@
 
 1.17\. Select the VPC **My VPC** from the list, choose **Actions** and **Edit DNS Hostnames**.
 
-![Edit DNS Hostnames](../images/edit-dns-hostnames.png)
+![Edit DNS Hostnames](images/edit-dns-hostnames.png)
 
 1.18\. In the dialog box that opens, check the **enable** option, and then choose **Save**.
 
 1.19\. Review the information of **My VPC** in the **Summary** tab. Make sure both settings for **DNS resolution** and **DNS hostnames** are enabled.
             
-![VPC Enabled](../images/vpc-enabled.png)
+![VPC Enabled](images/vpc-enabled.png)
 
 ## 2. Create the Security Group for the Application Laod Balancer
 

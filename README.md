@@ -6,7 +6,7 @@ In this workshop, you will build 2-tier application architecture with Auto Scali
 
 See the diagram below for a depiction of the complete architecture.
 
-![Immersion Day Core Services with Auto Scaling](images/aws.png)
+![Immersion Day Core Services with Auto Scaling](tutorials/images/aws.png)
 
 ## Modules
 
@@ -14,14 +14,14 @@ This workshop is broken up into multiple modules.
 
 For building out your architecture, you must complete the following modules in **US East (N. Virginia)** region in order before proceeding to the next:
 
-1\. [Getting Started with AWS IAM](tutorials/IAM.md "AWS IAM")
+1\. [Getting Started with AWS IAM](tutorials/getting-started-with-aws-iam.md "AWS IAM")
 
-2\. [Getting Started with Amazon VPC](tutorials/VPCWizard.md "Amazon VPC")
+2\. [Getting Started with Amazon VPC](tutorials/getting-started-with-amazon-vpc.md "Amazon VPC")
 
-3\. [Getting Started with Application Load Balancer](tutorials/ApplicationLoadBalancer.md "Application Load Balancer")
+3\. [Getting Started with Application Load Balancer](tutorials/getting-started-with-alb.md "Application Load Balancer")
 
-4\. [Getting Started with Amazon S3](tutorials/S3.md "Amazon S3")
+4\. [Getting Started with Amazon S3](tutorials/getting-started-with-amazon-s3.md "Amazon S3")
 
-5\. [Getting Started with Amazon RDS](tutorials/RDS.md "Amazon RDS")
+5\. [Getting Started with Amazon RDS](tutorials/getting-started-with-amazon-rds.md "Amazon RDS")
 
-6\. [Getting Started with AWS Auto Scaling](tutorials/AutoScaling.md "AWS Auto Scaling")
+6\. [Getting Started with AWS Auto Scaling](tutorials/getting-started-with-autoscaling.md "AWS Auto Scaling")

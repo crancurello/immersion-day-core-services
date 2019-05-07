@@ -14,7 +14,7 @@
 
 1.6\.	Choose **Create**.
 
-![RDS Subnet Group](../images/rds-subnet-group.png)
+![RDS Subnet Group](images/rds-subnet-group.png)
 
 ## 2. Launch an RDS Instance
 

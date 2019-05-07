@@ -10,7 +10,7 @@
 
 1.4\. On the **Select load balancer type** page, choose **Application Load Balancer** and then choose **Create**.
 
-![ALB Select](../images/alb-select.png)
+![ALB Select](images/alb-select.png)
 
 1.5\. Complete the **Configure Load Balancer** page as follows:
 
@@ -26,7 +26,7 @@
 
 •	**Availability Zones:** Select the check box for the Availability Zones to enable for your load balancer. For **us-east-1a** select the **Public Subnet 01** and for **us-east-1b** select **Public Subnet 02**.
 
-![Configure Load Balancer](../images/alb.png)
+![Configure Load Balancer](images/alb.png)
 
 1.6\. Choose **Next: Configure Security Settings**.
 
@@ -34,13 +34,13 @@
 
 1.8\. Select the existing security group **our-experiences-alb** and choose **Next: Configure Routing**.
 
-![ALB SG](../images/alb-sg.png)
+![ALB SG](images/alb-sg.png)
 
 1.9\. In the **Configure Routing** section, for **Name** type `our-experiences`, for Target type choose **Instance**.
 
 1.10\. Expand **Advanced health check settings** section, for **Healthy threshold** type `2`.
 
-![ALB Routing](../images/alb-routing.png)
+![ALB Routing](images/alb-routing.png)
 
 1.11\. Choose **Next: Register Targets**.
 
