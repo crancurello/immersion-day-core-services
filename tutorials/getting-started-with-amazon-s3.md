@@ -8,11 +8,9 @@
 
 1.3\.	In the **Bucket name** field, type a unique DNS-compliant name for your new bucket, for example `<my-name>-our-experiences`.
 
-•	The name must be unique across all existing bucket names in Amazon S3.
-
-•	After you create the bucket you cannot change the name, so choose wisely.
-
-•	Choose a bucket name that reflects the objects in the bucket because the bucket name is visible in the URL that points to the objects that you're going to put in your bucket.
+* The name must be unique across all existing bucket names in Amazon S3.
+* After you create the bucket you cannot change the name, so choose wisely.
+* Choose a bucket name that reflects the objects in the bucket because the bucket name is visible in the URL that points to the objects that you're going to put in your bucket.
 
 1.4\.	For Region, choose **US East (N. Virginia)** as the region where you want the bucket to reside.
 
@@ -32,9 +30,8 @@
 
 2.5\.	Uncheck the following two options:
 
-•	**Block new public ACLs and uploading public objects (Recommended).**
-
-•	**Remove public access granted through public ACLs (Recommended).**
+* **Block new public ACLs and uploading public objects (Recommended).**
+* **Remove public access granted through public ACLs (Recommended).**
 
 ![S3 Permissions](images/s3-permissions.png)
 

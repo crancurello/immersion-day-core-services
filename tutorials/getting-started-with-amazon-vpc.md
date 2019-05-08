@@ -86,13 +86,10 @@
 
 3.7\. In the dialog, choose **Add Rule** and do the following:
 
-•	**Type:** `HTTP`
-
-•	**Protocol:** `TCP`
-
-•	**Port Range:** `80`
-
-•	**Source:** `Anywhere 0.0.0.0/0`
+* **Type:** `HTTP`
+* **Protocol:** `TCP`
+* **Port Range:** `80`
+* **Source:** `Anywhere 0.0.0.0/0`
 
 3.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
 
@@ -114,13 +111,10 @@
 
 4.7\. In the dialog, choose **Add Rule** and do the following:
 
-•	**Type:** `HTTP`
-
-•	**Protocol:** `TCP`
-
-•	**Port Range:** `80`
-
-•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences-alb**
+* **Type:** `HTTP`
+* **Protocol:** `TCP`
+* **Port Range:** `80`
+* **Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences-alb**
 
 ![Our Experiences](images/sg-create-our-experiences.png)
 
@@ -144,13 +138,10 @@
 
 5.7\. In the dialog, choose **Add Rule** and do the following:
 
-•	**Type:** `SSH`
-
-•	**Protocol:** `TCP`
-
-•	**Port Range:** `22`
-
-•	**Source:** `Anywhere 0.0.0.0/0`
+* **Type:** `SSH`
+* **Protocol:** `TCP`
+* **Port Range:** `22`
+* **Source:** `Anywhere 0.0.0.0/0`
 
 5.8\. Choose **Save rules** and **Close**, you will have the following inbound rules.
 
@@ -172,23 +163,17 @@
 
 6.7\. In the dialog, choose **Add Rule** and add the following rules:
 
-•	**Type:** `MYSQL/Aurora`
-
-•	**Protocol:** `TCP`
-
-•	**Port Range:** `3306`
-
-•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences**
+* **Type:** `MYSQL/Aurora`
+* **Protocol:** `TCP`
+* **Port Range:** `3306`
+* **Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **our-experiences**
 
 Another rule:
 
-•	**Type:** `MYSQL/Aurora`
-
-•	**Protocol:** `TCP`
-
-•	**Port Range:** `3306`
-
-•	**Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **bastion**
+* **Type:** `MYSQL/Aurora`
+* **Protocol:** `TCP`
+* **Port Range:** `3306`
+* **Source:** `Custom sg-XXXXXXX` Type `sg-` and select the security group ID for **bastion**
 
 ![Our Experiences DB](images/sg-create-our-experiences-db.png)
 
@@ -196,7 +181,7 @@ Another rule:
 
 ![Our Experiences DB](images/sg-our-experiences-db.png)
 
-### 7. Create a new Key Pair
+## 7. Create a new Key Pair
 
 7.1\. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
 
@@ -212,7 +197,7 @@ Another rule:
 
 **NOTE**: You will use the Key Pair you just created to manage your EC2 instances for the rest of the labs.
 
-### 8. Create the Bastion EC2 Instance
+## 8. Create the Bastion EC2 Instance
 
 **Bastion Hosts**: Including bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet. After you set up your bastion hosts, you can access the other instances in your VPC through Secure Shell (SSH) connections on Linux. Bastion hosts are also configured with security groups to provide fine-grained ingress control.
 

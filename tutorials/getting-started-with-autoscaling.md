@@ -14,13 +14,10 @@
 
 1.6\.	On the Configure Details page, do the following:
 
-•	For **Name**, type `WebServers` for your launch configuration.
-
-•	For **IAM Role**, select **Our_Experiences_S3** to associate with the instances.
-
-•	(Optional) By default, basic monitoring is enabled for your Auto Scaling instances. To enable detailed monitoring for your Auto Scaling instances, select **Enable CloudWatch detailed monitoring**.
-
-•	Expand the section **Advanced Details**, copy the [content file](scripts/bootstrap-github.sh), from the script replace `<ENDPOINT>` with the RDS instance endpoint and `<BUCKET_NAME>` with your bucket name created earlier, paste it in **User data** as text.
+* For **Name**, type `WebServers` for your launch configuration.
+* For **IAM Role**, select **Our_Experiences_S3** to associate with the instances.
+* (Optional) By default, basic monitoring is enabled for your Auto Scaling instances. To enable detailed monitoring for your Auto Scaling instances, select **Enable CloudWatch detailed monitoring**.
+* Expand the section **Advanced Details**, copy the [content file](scripts/bootstrap-github.sh), from the script replace `<ENDPOINT>` with the RDS instance endpoint and `<BUCKET_NAME>` with your bucket name created earlier, paste it in **User data** as text.
 
 1.7\.	Choose **Next: Add Storage** and **Next: Configure Security Group**.
 
@@ -42,15 +39,11 @@
 
 2.5\.	On the **Configure Auto Scaling group details** page, do the following:
 
-•	For **Group name**, type `WebServer` for your Auto Scaling group.
-
-•	For **Group size**, type `2` as the initial number of instances for your Auto Scaling group.
-
-•	For **Network**, choose **My VPC** for your Auto Scaling group.
-
-•	For **Subnet**, select **10.1.2.0/24** (Private Subnet 01) and **10.1.3.0/24** (Private Subnet 02).
-
-•	Expand **Advanced Details**, choose **Receive traffic from one or more load balancers**, choose the target group **our-experiences**, for the **Health Check Type** select **ELB** and select **Enable CloudWatch detailed monitoring**.
+* For **Group name**, type `WebServer` for your Auto Scaling group.
+* For **Group size**, type `2` as the initial number of instances for your Auto Scaling group.
+* For **Network**, choose **My VPC** for your Auto Scaling group.
+* For **Subnet**, select **10.1.2.0/24** (Private Subnet 01) and **10.1.3.0/24** (Private Subnet 02).
+* Expand **Advanced Details**, choose **Receive traffic from one or more load balancers**, choose the target group **our-experiences**, for the **Health Check Type** select **ELB** and select **Enable CloudWatch detailed monitoring**.
 
 2.6\.	Choose **Next: Configure scaling policies**.
 
@@ -58,11 +51,9 @@
 
 2.8\.	Click on **Scale the Auto Scaling group using step or simple scaling policies**.
 
-2.9\.	Click on **Scale the Auto Scaling group using step or simple scaling policies**.
+2.9\.	For **Increase Group Size**, click on **Add new alarm**, select **>=** and type `80` **Percent** and choose **Create Alarm**, take the action **Add** and type `2`.
 
-2.10\.	For **Increase Group Size**, click on **Add new alarm**, select **>=** and type `80` **Percent** and choose **Create Alarm**, take the action **Add** and type `2`.
-
-2.11\.	For **Decrease Group Size**, click on **Add new alarm**, select **<=** and type `40` **Percent** and choose **Create Alarm**, take the action **Remove** and type `2`.
+2.10\.	For **Decrease Group Size**, click on **Add new alarm**, select **<=** and type `40` **Percent** and choose **Create Alarm**, take the action **Remove** and type `2`.
 
 2.11\.	Choose **Review** and **Create Auto Scaling group**.
 
